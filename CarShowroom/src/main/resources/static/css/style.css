@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+.menu-main {
+  list-style: none;
+  padding: 25px 0 5px;
+  text-align: center;
+  background: white;
+}
+.menu-main li {display: inline-block;}
+.menu-main li:after {
+  content: "|";
+  color: #F79361;
+  display: inline-block;
+  vertical-align:top;
+}
+.menu-main li:last-child:after {content: none;}
+.menu-main a {
+  text-decoration: none;
+  font-family: "Lucida Grande", sans-serif;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 20px;
+  margin: 0 34px 0 30px;
+  font-size: 17px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: color .4s;
+}
+.menu-main a, .menu-main a:visited {color: #9d999d;}
+.menu-main a.current, .menu-main a:hover{color: #feb386;}
+.menu-main a:before,
+.menu-main a:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  top: auto;
+  right: 50%;
+  bottom: -5px;
+  left: 50%;
+  background: #F79361;
+  transition: .8s;
+}
+.menu-main a:hover:before, .menu-main .current:before {left: 0;}
+.menu-main a:hover:after, .menu-main .current:after {right: 0;}   
+@media (max-width: 550px) {
+.menu-main {padding-top: 0;}
+.menu-main li {display: block;}
+.menu-main li:after {content: none;}
+.menu-main a {
+  padding: 25px 0 20px; 
+  margin: 0 30px;
+}
+}
+
+
+
+.table_carShowroom{
+  border-collapse: collapse;
+  border-left: 3px solid #F79361;
+  border-right: 3px solid #F79361;
+  border-bottom: 3px solid #F79361;
+  font-family: "Lucida Grande", sans-serif;
+ }
+ 
+ 
+.table_carShowroom caption {
+  background: #F79361; 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px  4px 0 rgba(0,0,0,.3);
+  color: white;
+  font-family: "Roboto Slab",serif;
+  font-style: normal;
+  font-size: 26px;
+  text-align: center;
+  margin: 0;
+}
+.table_carShowroom td, .table_carShowroom th {
+  padding: 10px;
+}
+.table_carShowroom th {
+  text-align: left;
+  font-size: 18px;
+}
+.table_carShowroom tr:nth-child(2n) {
+  background: #E5E5E5;
+}
+.table_carShowroom td:last-of-type {
+  text-align: center;
+}
+.table_carShowroom a {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #F79361;
+  box-shadow: 2px 2px 0 0 #a22800;
+  position: relative;
+}
+.table_carShowroom a:hover {
+  box-shadow: none;
+  top: 2px;
+  left: 2px;
+}
+
+* {box-sizing: border-box;}
+body {background: #CDC9A5;}
+.decor {
+  position: relative;
+  max-width: 400px;
+  margin: 50px auto 0;
+  background: white;
+  border-radius: 30px;
+}
+.form-left-decoration,
+.form-right-decoration {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  background: #f69a73;
+  border-radius: 20px;
+}
+.form-left-decoration {
+  bottom: 60px;
+  left: -30px;
+}
+.form-right-decoration {
+  top: 60px;
+  right: -30px;
+}
+.form-left-decoration:before,
+.form-left-decoration:after,
+.form-right-decoration:before,
+.form-right-decoration:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  border-radius: 30px;
+  background: white;
+}
+.form-left-decoration:before {top: -20px;}
+.form-left-decoration:after {
+  top: 20px;
+  left: 10px;
+}
+.form-right-decoration:before {
+  top: -20px;
+  right: 0;
+}
+.form-right-decoration:after {
+  top: 20px;
+  right: 10px;
+}
+.circle {
+  position: absolute;
+  bottom: 80px;
+  left: -55px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+}
+.form-inner {padding: 50px;}
+.form-inner input,
+.form-inner textarea {
+  display: block;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  background: #E9EFF6;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+.form-inner input[type="submit"] {
+  margin-top: 30px;
+  background: #f69a73;
+  border-bottom: 4px solid #d87d56;
+  color: white;
+  font-size: 14px;
+}
+.form-inner textarea {resize: none;}
+.form-inner h3 {
+  margin-top: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #707981;
+}
+
+a.button {
+  position: relative;
+  margin:5;
+  display: inline-block;
+  width: 11em;
+  height: 2.5em;
+  line-height: 2.5em;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #777;
+  color: #fff;
+  outline: none;
+  border: 2px solid #A52A2A;
+  border-radius: 5px;
+ box-shadow: 2px 2px 0 0 #a22800;
+  background: #F79361;
+  font-size:17px;
+}
+a.button:active {
+  top: .1em;
+  left: .1em;
+  box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+}

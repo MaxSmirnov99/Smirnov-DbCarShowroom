@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Cars</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+<div>
+	<ul class="menu-main">
+  		<li><a href="/">Car showroom</a></li>
+  		<li><a href="/cars" class="current">Cars</a></li>
+  		<li><a href="/clients">Clients</a></li>
+  		<li><a href="/contracts">Contracts</a></li>
+	</ul>
+</div>
+<div align="center">
+    <table class="table_carShowroom">
+     <caption>Cars</caption>
+        <thead>
+            <tr>
+                <th>Car ID</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Year of issue</th>
+                <th>Number passport</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="car : ${listCars}">
+                <td th:text="${car.car_id}">Car ID</td>
+                <td th:text="${car.brand}">Brand</td>
+                <td th:text="${car.model}">Model</td>
+                <td th:text="${car.color}">Color</td>
+                <td th:text="${car.year_of_issue}">Year_of_issue</td>
+                <td th:text="${car.number_passport}">Number_passport</td>
+                <td th:text="${car.price}">Price</td>
+				<td>
+                    <a th:href="@{'/edit-car/' + ${car.car_id}}">Edit</a>
+                    <a th:href="@{'/delete-car/' + ${car.car_id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/new-car" class="button">Create new car</a>
+</div>   
+</body>
+</html>

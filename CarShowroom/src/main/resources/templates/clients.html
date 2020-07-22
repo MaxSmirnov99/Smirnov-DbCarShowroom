@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Clients</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+<div>
+<ul class="menu-main">
+  <li><a href="/">Car showroom</a></li>
+  <li><a href="/cars">Cars</a></li>
+  <li><a href="/clients" class="current">Clients</a></li>
+  <li><a href="/contracts">Contracts</a></li>
+</ul>
+</div>
+<div align="center">
+    <table class="table_carShowroom">
+     <caption>Clients</caption>
+        <thead>
+            <tr>
+                <th>Client ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="client : ${listClients}">
+                <td th:text="${client.id}">Client ID</td>
+                <td th:text="${client.name}">Name</td>
+                <td th:text="${client.email}">Email</td>
+                <td th:text="${client.address}">Address</td>
+				<td>
+                    <a th:href="@{'/edit-client/' + ${client.id}}">Edit</a>
+                    <a th:href="@{'/delete-client/' + ${client.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/new-client" class="button">Create new client</a>
+</div>   
+</body>
+</html>

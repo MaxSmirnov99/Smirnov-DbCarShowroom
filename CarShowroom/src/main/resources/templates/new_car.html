@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create new Car</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+        <h1 align="center">Create new Car</h1>
+        <form class="decor" action="#" th:action="@{/save-car}" th:object="${car}" method="post">
+		<div class="form-left-decoration"></div>
+  		<div class="form-right-decoration"></div>
+  		<div class="circle"></div>
+  		<div class="form-inner">
+            <table class="table_carShowroom">       
+                <tr>             
+                    <td>Brand:</td>
+                    <td>
+                        <input type="text" th:field="*{brand}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Model:</td>
+                    <td><input type="text" th:field="*{model}" /></td>
+                </tr>
+                <tr>
+                    <td>Color:</td>
+                    <td><input type="text" th:field="*{color}" /></td>
+                </tr> 
+                 <tr>
+                    <td>Year_of_issue:</td>
+                    <td><input type="text" th:field="*{year_of_issue}" /></td>
+                </tr> 
+                 <tr>
+                    <td>Number_passport:</td>
+                    <td><input type="text" th:field="*{number_passport}" /></td>
+                </tr> 
+                 <tr>
+                    <td>Price:</td>
+                    <td><input type="text" th:field="*{price}" /></td>
+                </tr>                           
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+</body>
+</html>

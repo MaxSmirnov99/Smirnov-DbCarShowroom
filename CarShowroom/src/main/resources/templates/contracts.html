@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Contracts</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+<div>
+	<ul class="menu-main">
+  		<li><a href="/">Car showroom</a></li>
+  		<li><a href="/cars">Cars</a></li>
+ 		<li><a href="/clients">Clients</a></li>
+  		<li><a href="/contracts" class="current">Contracts</a></li>
+	</ul>
+</div>
+<div align="center">
+    <table class="table_carShowroom">
+     <caption>Contracts</caption>
+        <thead>
+            <tr>
+                <th>Contract ID</th>
+                <th>Date of sale</th>
+                <th>Car ID</th>
+                <th>Client ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="contract : ${listContracts}">
+                <td th:text="${contract.contract_id}">Contract ID</td>
+                <td th:text="${contract.date_of_sale}">Date of sale</td>
+                <td th:text="${contract.car.car_id}">Car ID</td>
+                <td th:text="${contract.client.id}">Client ID</td>
+				<td>
+                    <a th:href="@{'/edit-contract/' + ${contract.contract_id}}">Edit</a>
+                    <a th:href="@{'/delete-contract/' + ${contract.contract_id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/new-contract" class="button">Create new contract</a>
+</div>   
+</body>
+</html>
